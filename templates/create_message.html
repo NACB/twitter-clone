@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<h2 class='header'>Create Message</h2>
+<h3 class='header'>now with formatting!</h3>
+{% endblock %}
+
+{% block content %}
+
+{% if posting_complete %}
+<p class='good_note'>Your message was posted!</p>
+<p class='good_note'>Go look at it <a href='http://127.0.0.1:5000/'>here</a>.</p>
+<p class='good_note'>Then do it all again!</p>
+{% endif %}
+
+<p class=body_text>Messages can be formatted with HTML or Markdown. All URLs will be automatically converted to links!</p>
+
+<form action=/create_message method=POST>
+    <label for="post">Write your message, and keep it interesting!</label>
+
+    <textarea name="post" cols="33"></textarea>
+
+    <input id="post_button" type=submit value='Post!'>
+</form>
+{% endblock %}

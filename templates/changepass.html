@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<h2 class='header'>Change Your Password</h2>
+{% endblock %}
+
+{% block content %}
+<h3 class="header">to change passwords you must know your old password</h3>
+
+{% if bad_password %}
+<p class='bad_note'>Your new passwords don't match. Try typing slower.</p>
+{% endif %}
+{% if wrong_password %}
+<p class='bad_note'>Your current password was incorrect. Try again.</p>
+{% endif %}
+{% if change %}
+<p class='good_note'>Your password was changed successfully, and you have been logged in with the new one.</p>
+{% endif %}
+
+<form action=/changepass method=POST>
+    <table>
+        <tr><td>Enter old password:</td><td><input type=password name=password_o></td></tr>
+        <tr><td>Enter <b>new</b> password:</td><td><input type=password name=password_n></td></tr>
+        <tr><td>Re-enter <b>new</b> password:</td><td><input type=password name=password_n2></td></tr>
+        <tr><td></td><td><input type=submit value='change'></td></tr>
+    </table>
+</form>
+{% endblock %}

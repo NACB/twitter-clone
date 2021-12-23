@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<h2 class='header'>Create User</h2>
+{% endblock %}
+
+{% block content %}
+
+{% if bad_username %}
+<p class='bad_note'>That username already belongs to someone. Be more original.</p>
+{% endif %}
+
+{% if bad_password %}
+<p class='bad_note'>Your passwords don't match. Try typing slower.</p>
+{% endif %}
+
+{% if successful_create %}
+<p class='good_note'>All good here!</p>
+{% endif %}
+
+
+<form action=/create_user method=POST>
+    <table>
+        <tr><td>create a username</td><td><input type=text name=c_username></td></tr>
+        <tr><td>create a password</td><td><input type=password name=password1></td></tr>
+        <tr><td>re-enter password</td><td><input type=password name=password2></td></tr>
+        <tr><td></td><td><input type=submit value='create'></td></tr>
+    </table>
+</form>
+
+{% endblock %}

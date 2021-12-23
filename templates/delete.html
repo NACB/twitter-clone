@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<h2 class='header'>Delete Your Account</h2>
+{% endblock %}
+
+{% block content %}
+{% if deleted %}
+<p class='good_note'>Your account and everything you ever posted have been deleted. <a href='/create_user'>Make a new account</a> when you change your mind.</p>
+{% endif %}
+{% if statement_wrong %}
+<p class='bad_note'>You entered the statement wrong. Take a minute to think over your decision and try again, if you want.</p>
+{% endif %}
+
+
+
+
+<h3 class="header">just follow the steps below to <i>permanently</i> delete your account</h3>
+<h4 class="header">deleting your account will also delete all of your messages</h4>
+
+<form action=/delete method=POST>
+    <table>
+        <tr><td>Type the Following <i>exactly</i> as it appears: i am lame and done with this site </td><td><input type=text name=delete_statement></td></tr>
+        <tr><td></td><td><input type=submit value='I am Absolutely Certain'></td></tr>
+    </table>
+</form>
+{% endblock %}

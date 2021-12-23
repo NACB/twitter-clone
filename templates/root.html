@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<h2 class='header'>Home</h2>
+{% endblock %}
+
+{% block content %}
+{% if successful_create %}
+    <p class=good_note>Your account was successfully registered, and you have been logged in.</p>
+    <p class=good_note>Don't just sit there, post something!</p>
+{% endif %}
+
+<h2 class='header'>Latest Posts:</h2>
+
+<table border = 1 id="messages">
+    <tr id="table_header">
+        <td><h4>User:</h4></td>
+        <td><h4>User Image:</h4></td>
+        <td><h4>Message:</h4></td>
+        <td><h4>Time:</h4></td>
+    </tr>
+    <tr>
+     {% for message in messages %}
+           <td> {{message['username']}} </td>
+           <td> <img src="https://robohash.org/{{message['sender_id']}}.png" class="profile_picture"> </td>
+           <td> {{message['message']|safe}} </td>
+           <td> {{message['created_at']}} </td>
+        </tr>
+     {% endfor %}
+  </table>
+{% endblock %}

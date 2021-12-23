@@ -3,7 +3,11 @@
 
 ### Why?
 
-This project was a part of [CMC's CS040 class](https://github.com/mikeizbicki/cmc-csci040). This project consisted of a series of required tasks, including:
+This project was a part of [CMC's CS040 class](https://github.com/mikeizbicki/cmc-csci040)
+
+### What?
+
+This project consisted of a series of required tasks, including:
 - creating a home page
 - creating a log in system
 - creating a log out system

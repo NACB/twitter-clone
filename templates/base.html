@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Twitter Clone for CS40!</title>
+        <link rel="stylesheet" href="/static/style.css">
+        <img src="/static/new_logo.png" alt="original artwork" class="picture" style="width:128px">
+    </head>
+    <body>
+        <h1 class="header"><s>Twitter Clone</s> not a copyright violation</h1>
+        {% block title %}
+        {% endblock %}
+        <table border = 1 id="navbar">
+            <tr class="nav">
+                <td class="nav_button"><a href='/'>home</a></td>
+                {% if is_logged_in %}
+                <td class="nav_button"><a href='/logout'>logout</a></td>
+                <td class="nav_button"><a href='/create_message'>create message</a></td>
+                <td class="nav_button"><a href='/account_info'>account info</a></td>
+                {% else %}
+                <td class="nav_button"><a href='/login'>login</a></td>
+                <td class="nav_button"><a href='/create_user'>create user</a></td>
+                {% endif %}
+            </tr>
+        </table>
+
+        <main>
+        {% block content %}
+        {% endblock %}
+        </main>
+    </body>
+</html>
